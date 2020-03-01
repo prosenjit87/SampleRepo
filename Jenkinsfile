@@ -60,7 +60,7 @@ pipeline {
         }
       }
     }
-	stage('IPScan and PPMS') {
+    stage('IPScan and PPMS') {
       parallel {
         stage('PPMS') {
           steps {
@@ -79,7 +79,7 @@ pipeline {
         echo 'Run Automation'
       }
     }
-	stage('Performance') {
+    stage('Performance') {
       steps {
         echo 'Run performance'
       }
