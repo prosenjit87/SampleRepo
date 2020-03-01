@@ -60,17 +60,7 @@ pipeline {
         }
       }
     }
-    stage('Performance') {
-      steps {
-        echo 'Run performance'
-      }
-    }
-    stage('IAT Automation') {
-      steps {
-        echo 'Run Automation'
-      }
-    }
-    stage('IPScan and PPMS') {
+	stage('IPScan and PPMS') {
       parallel {
         stage('PPMS') {
           steps {
@@ -82,6 +72,16 @@ pipeline {
             echo 'Run whitesource'
           }
         }
+      }
+    }
+    stage('IAT Automation') {
+      steps {
+        echo 'Run Automation'
+      }
+    }
+	stage('Performance') {
+      steps {
+        echo 'Run performance'
       }
     }
     stage('Promote') {
